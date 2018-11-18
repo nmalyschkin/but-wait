@@ -1,7 +1,7 @@
 {
   "name": "but-wait",
   "version": "0.2.0",
-  "description": "",
+  "description": "but wait, there is more! run parallel tasks synchronously after initializing but before starting your application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
