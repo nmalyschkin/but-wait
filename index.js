@@ -1,27 +1,29 @@
 var _stackOfMore = [];
 var _noMore = false;
+
 /**
- * add function
+ * add a Promise or function that returns a Promise
  * 
- * @param {function} more called without any parameters, expected to return Promise
+ * @param {function/Promise} more if function called without any parameters, expected to return Promise
  */
 var thereIsMore = function(more) {
     if (_noMore) throw new Error("but-wait: you must not add more after noMore was called");
-    if (!(more instanceof Function))
-        throw new Error("but-wait: 'thereIsMore' must be called with a function that return a Promise");
+    let toPush = more;
+    if (more instanceof Function) toPush = more();
+    if (!(toPush instanceof Promise))
+        throw new Error("but-wait: expected Promise as return, got " + prom.constructor.name);
+
     _stackOfMore.push(more);
 };
 
+/**
+ * call when no more should be added
+ * 
+ * @returns {Promise} Promise that is resolved when all asynchronous initializations finished
+ */
 var noMore = function() {
     _noMore = true;
-    return Promise.all(
-        _stackOfMore.map(function(more) {
-            var prom = more();
-            if (!prom) throw new Error("but-wait: expected Promise as return, got undefined");
-            if (prom instanceof Promise) return prom;
-            else throw new Error("but-wait: expected Promise as return, got " + prom.constructor.name);
-        })
-    ).then(() => console.log("noMore is done"));
+    return Promise.all(_stackOfMore);
 };
 
 module.exports = {
