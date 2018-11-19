@@ -8,12 +8,12 @@ var _noMore = false;
  */
 var thereIsMore = function(more) {
     if (_noMore) throw new Error("but-wait: you must not add more after noMore was called");
-    let toPush = more;
+    var toPush = more;
     if (more instanceof Function) toPush = more();
     if (!(toPush instanceof Promise))
         throw new Error("but-wait: expected Promise as return, got " + prom.constructor.name);
 
-    _stackOfMore.push(more);
+    _stackOfMore.push(toPush);
 };
 
 /**
