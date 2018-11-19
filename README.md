@@ -42,18 +42,20 @@ butWait.noMore().then(() => {
 add a task that should be run before. Can not be called after **noMore()** was called.
 | Argument | Type |Description |
 | - |:-:| :-:|
-| more      | \<function:\<Promise\>\> <br> **or** <br> \<Promise\> | can be either a Promise or a function that returns a Promise. <br>  |
+| more      | `<function:<Promise>>` <br> **or** `<Promise>` | can be either a Promise or a function that returns a Promise. <br>  |
 
 ### noMore()
 can only be called once
 | Argument | Type |Description |
 | - |:-:| :-:|
-| *returns*      | Promise | resolved after all Promises in the stack are resolved |
+| *returns*      | `<Promise>` | resolved after all Promises in the stack are resolved |
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+TODO-List
+* add namespaces
+* add tests
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
