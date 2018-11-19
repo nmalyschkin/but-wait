@@ -11,7 +11,7 @@ var thereIsMore = function(more) {
     var toPush = more;
     if (more instanceof Function) toPush = more();
     if (!(toPush instanceof Promise))
-        throw new Error("but-wait: expected Promise as return, got " + prom.constructor.name);
+        throw new Error("but-wait: expected Promise as return, got " + toPush.constructor.name);
 
     _stackOfMore.push(toPush);
 };
