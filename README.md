@@ -41,13 +41,13 @@ butWait.noMore().then(() => {
 ### thereIsMore(more)
 add a task that should be run before. Can not be called after **noMore()** was called.
 | Argument | Type |Description |
-| - |:-:| :-:|
+| --- | ---| --- |
 | more      | `<function:<Promise>>` <br> **or** `<Promise>` | can be either a Promise or a function that returns a Promise. <br>  |
 
 ### noMore()
 can only be called once
 | Argument | Type |Description |
-| - |:-:| :-:|
+| --- | ---| --- |
 | *returns*      | `<Promise>` | resolved after all Promises in the stack are resolved |
 
 ## Contributing
