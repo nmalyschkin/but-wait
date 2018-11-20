@@ -1,6 +1,6 @@
 {
   "name": "but-wait",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "but wait, there is more! run parallel tasks synchronously after initializing but before starting your application",
   "main": "index.js",
   "scripts": {

@@ -31,7 +31,7 @@ butWait.thereIsMore(
 import butWait from "but-wait";
 
 butWait.noMore().then(() => {
-    //important data is fetched and resolved
+    //important data is fetched and processed
     startApplication()
 })
 ```
